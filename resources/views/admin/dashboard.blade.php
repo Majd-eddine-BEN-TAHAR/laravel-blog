@@ -8,7 +8,7 @@
                 <a href="{{ route('admin.posts') }}"
                     class="list-group-item list-group-item-action {{ request()->is('admin/posts') ? 'active' : '' }}">Posts</a>
                 <a href="{{ route('admin.categories') }}"
-                    class="list-group-item list-group-item-action {{ request()->is('admin/categories') ? 'active' : '' }}">Categories</a>
+                    class="list-group-item list-group-item-action {{ request()->routeIs('admin.categories') || request()->routeIs('admin.categories.edit') ? 'active' : '' }}">Categories</a>
                 <a href="{{ route('admin.users') }}"
                     class="list-group-item list-group-item-action {{ request()->is('admin/users') ? 'active' : '' }}">Users</a>
                 <a href="{{ route('admin.settings') }}"
