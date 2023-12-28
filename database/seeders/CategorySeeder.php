@@ -15,18 +15,13 @@ class CategorySeeder extends Seeder
     public function run()
     {
         $categories = [
-            ['name' => 'Technology', 'description' => 'All about the latest technology trends'],
-            ['name' => 'Health', 'description' => 'Health tips, news, and advice'],
-            ['name' => 'Travel', 'description' => 'Exploring new destinations'],
-            // Add more categories as needed
+            ['name' => 'Travel', 'slug' => 'travel', 'description' => 'Travel tips and destination guides.'],
+            ['name' => 'Technology', 'slug' => 'technology', 'description' => 'Latest tech trends and news.'],
+
         ];
 
         foreach ($categories as $category) {
-            Category::create([
-                'name' => $category['name'],
-                'slug' => Str::slug($category['name']),
-                'description' => $category['description']
-            ]);
+            Category::create($category);
         }
     }
 }

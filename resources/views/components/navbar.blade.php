@@ -43,7 +43,7 @@
                     @auth
                         @if (Auth::user()->is_admin)
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('admin.posts') }}">Dashboard</a>
+                                <a class="nav-link" href="{{ route('admin.posts.index') }}">Dashboard</a>
                             </li>
                         @endif
                     @endauth

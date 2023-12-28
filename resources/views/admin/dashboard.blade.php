@@ -5,13 +5,13 @@
         <!-- Sidebar -->
         <div class="col-md-3">
             <div class="list-group">
-                <a href="{{ route('admin.posts') }}"
-                    class="list-group-item list-group-item-action {{ request()->is('admin/posts') ? 'active' : '' }}">Posts</a>
-                <a href="{{ route('admin.categories') }}"
-                    class="list-group-item list-group-item-action {{ request()->routeIs('admin.categories') || request()->routeIs('admin.categories.edit') ? 'active' : '' }}">Categories</a>
-                <a href="{{ route('admin.users') }}"
+                <a href="{{ route('admin.posts.index') }}"
+                    class="list-group-item list-group-item-action {{ request()->routeIs('admin.posts.index') || request()->routeIs('admin.posts.create') || request()->routeIs('admin.posts.edit') ? 'active' : '' }}">Posts</a>
+                <a href="{{ route('admin.categories.index') }}"
+                    class="list-group-item list-group-item-action {{ request()->routeIs('admin.categories.index') || request()->routeIs('admin.categories.edit') ? 'active' : '' }}">Categories</a>
+                <a href="{{ route('admin.users.index') }}"
                     class="list-group-item list-group-item-action {{ request()->is('admin/users') ? 'active' : '' }}">Users</a>
-                <a href="{{ route('admin.settings') }}"
+                <a href="{{ route('admin.settings.index') }}"
                     class="list-group-item list-group-item-action {{ request()->is('admin/settings') ? 'active' : '' }}">Settings</a>
             </div>
         </div>

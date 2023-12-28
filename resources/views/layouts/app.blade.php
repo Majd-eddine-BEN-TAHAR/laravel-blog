@@ -8,8 +8,9 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Blog</title>
-
+    <title>{{ \App\Models\Setting::where('key', 'site_title')->value('value') ?? 'Blog' }}</title>
+    <link rel="icon" href="{{ Storage::url(\App\Models\Setting::where('key', 'favicon')->value('value')) }}"
+        type="image/png">
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
