@@ -19,9 +19,12 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/post/{slug}', [PostController::class, 'show'])->name('post.show');
+Route::get('/category/{category}', [CategoryController::class, 'show'])->name('category.show');
+Route::get('/search', [SearchController::class, 'index'])->name('search');
 
 Route::get('/about', function () {
     return view('about');
@@ -34,11 +37,7 @@ Route::get('/contact', function () {
 
 Auth::routes();
 
-// The ->name('home') part assigns a name ('home') to the route, which can be used to generate URLs or redirects to this route.
-Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/post/{slug}', [PostController::class, 'show'])->name('post.show');
-Route::get('/category/{category}', [CategoryController::class, 'show'])->name('category.show');
-Route::get('/search', [SearchController::class, 'index'])->name('search');
+
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/profile', 'App\Http\Controllers\ProfileController@index')->name('profile.index');
