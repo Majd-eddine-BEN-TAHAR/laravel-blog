@@ -45,6 +45,17 @@ npm install && npm run dev
 php artisan serve
 ```
 
+## Default User Accounts
+
+After running the database seeders, you will have two default user accounts:
+- **Admin Account :**
+    Email: admin@example.com
+    Password: majdmajd
+
+- **Regular User Account :**
+    Email: user@example.com
+    Password: majdmajd
+
 ## License
 
 This project is open-sourced under the MIT license.
