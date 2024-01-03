@@ -49,14 +49,16 @@ php artisan serve
 
 After running the database seeders, you will have two default user accounts:
 - **Admin Account :**
-    Email: admin@example.com
+
+  Email: admin@example.com
   
-    Password: majdmajd
+  Password: majdmajd
 
 - **Regular User Account :**
-    Email: user@example.com
+
+  Email: user@example.com
   
-    Password: majdmajd
+  Password: majdmajd
 
 ## License
 
