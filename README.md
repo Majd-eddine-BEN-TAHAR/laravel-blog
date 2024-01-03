@@ -36,9 +36,12 @@ cd laravel-blog-application
 composer install
 cp .env.example .env
 # Edit .env file with your database settings
-npm install && npm run dev
+mkdir -p public/storage/posts
+php artisan storage:link
+php artisan db:seed
 php artisan key:generate
 php artisan migrate
+npm install && npm run dev
 php artisan serve
 ```
 
