@@ -36,6 +36,7 @@ cd laravel-blog
 composer install
 php artisan key:generate
 cp .env.example .env
+# Create a database
 # Edit .env file with your database settings
 mkdir -p public/storage/posts
 php artisan storage:link
