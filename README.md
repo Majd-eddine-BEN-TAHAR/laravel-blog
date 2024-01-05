@@ -32,7 +32,7 @@ To get started with this project, clone the repository and install the necessary
 
 ```bash
 git clone https://your-repository-url.git
-cd laravel-blog-application
+cd laravel-blog
 composer install
 php artisan key:generate
 cp .env.example .env
