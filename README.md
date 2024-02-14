@@ -34,8 +34,8 @@ To get started with this project, clone the repository and install the necessary
 git clone https://your-repository-url.git
 cd laravel-blog
 composer install
-php artisan key:generate
 cp .env.example .env
+php artisan key:generate
 # Create a database
 # Edit .env file with your database settings
 mkdir -p public/storage/posts
