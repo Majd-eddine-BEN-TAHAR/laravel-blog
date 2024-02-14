@@ -29,6 +29,11 @@ class Post extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
     public function getFormattedPublishedAtAttribute()
     {
         return $this->published_at ? $this->published_at->format('F d, Y') : 'Not Published';

@@ -22,7 +22,7 @@ class PostController extends Controller
     public function show($slug)
     {
         // you need to download => composer require erusev/parsedown
-        $post = Post::where('slug', $slug)->firstOrFail();
+        $post = Post::with('comments.user')->where('slug', $slug)->firstOrFail();
         $parsedown = new Parsedown();
         $post->content = $parsedown->text($post->content); // Convert Markdown to HTML
 

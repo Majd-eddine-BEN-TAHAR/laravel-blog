@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\SearchController;
@@ -45,6 +46,10 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/password/change', 'App\Http\Controllers\PasswordController@showChangePasswordForm')->name('password.change');
     Route::post('/password/change', 'App\Http\Controllers\PasswordController@changePassword')->name('password.update');
+
+    Route::post('/post/{postId}/comment', [CommentController::class, 'store'])->name('comment.store')->middleware('auth');
+    Route::delete('/comment/{comment}', [CommentController::class, 'destroy'])->name('comment.destroy');
+    Route::put('/comment/{comment}', [CommentController::class, 'update'])->name('comment.update');
 });
 
 Route::middleware(['auth', 'admin'])->group(function () {
