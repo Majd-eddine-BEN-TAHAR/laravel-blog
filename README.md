@@ -19,6 +19,7 @@ This Laravel-based blog application offers a comprehensive platform for blogging
 - **Image Uploads**: Support for uploading and displaying featured images in blog posts.
 - **Add Comments** : Users can interact with the blog by adding comments to posts.
 - **Delete and Edit Comments** : Users have the ability to remove their own comments, giving them control over the content they contribute to the blog, they also can edit their comments after posting them.
+- **Like posts** : Users can like posts.
 - **About and Contact Pages**: Includes template pages for 'About Us' and 'Contact' with dummy content.
 
 ## Technologies Used
