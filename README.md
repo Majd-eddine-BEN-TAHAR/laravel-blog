@@ -40,8 +40,8 @@ cp .env.example .env
 php artisan key:generate
 # Create a database
 # Edit .env file with your database settings
-mkdir -p public/storage/posts
 php artisan storage:link
+mkdir -p public/storage/posts
 php artisan migrate
 php artisan db:seed
 npm install && npm run dev
