@@ -25,6 +25,27 @@
                     </div>
                 </article>
 
+                <!-- Display total likes -->
+                <div>
+                    <span>Total Likes: {{ $post->totalLikes() }}</span>
+                </div>
+
+                <!-- Like/Unlike button -->
+                @if (auth()->check())
+                    @if (!$post->likes->contains('user_id', auth()->id()))
+                        <form action="{{ route('like.store', $post->id) }}" method="post">
+                            @csrf
+                            <button type="submit" class="btn btn-outline-primary">Like</button>
+                        </form>
+                    @else
+                        <form action="{{ route('like.destroy', $post->id) }}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-primary">Unlike</button>
+                        </form>
+                    @endif
+                @endif
+
                 <!-- Comments Section -->
                 <div class="card mt-5">
                     <div class="card-body">

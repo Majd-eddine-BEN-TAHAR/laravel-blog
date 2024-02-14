@@ -34,6 +34,17 @@ class Post extends Model
         return $this->hasMany(Comment::class);
     }
 
+    public function likes()
+    {
+        return $this->hasMany(Like::class);
+    }
+
+    public function totalLikes()
+    {
+        return $this->likes()->count();
+    }
+
+
     public function getFormattedPublishedAtAttribute()
     {
         return $this->published_at ? $this->published_at->format('F d, Y') : 'Not Published';

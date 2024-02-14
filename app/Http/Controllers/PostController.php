@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use App\Models\Like;
 use Parsedown;
 
 class PostController extends Controller
@@ -113,5 +114,18 @@ class PostController extends Controller
         $post->delete();
 
         return redirect()->route('admin.posts.index')->with('success', 'Post deleted successfully.');
+    }
+
+
+    public function storeLike(Post $post)
+    {
+        auth()->user()->likes()->create(['post_id' => $post->id]);
+        return back();
+    }
+
+    public function destroyLike(Post $post)
+    {
+        auth()->user()->likes()->where('post_id', $post->id)->delete();
+        return back();
     }
 }

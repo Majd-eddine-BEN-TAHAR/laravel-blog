@@ -50,6 +50,9 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/post/{postId}/comment', [CommentController::class, 'store'])->name('comment.store')->middleware('auth');
     Route::delete('/comment/{comment}', [CommentController::class, 'destroy'])->name('comment.destroy');
     Route::put('/comment/{comment}', [CommentController::class, 'update'])->name('comment.update');
+
+    Route::post('/post/{post}/like', [PostController::class, 'storeLike'])->name('like.store');
+    Route::delete('/post/{post}/like', [PostController::class, 'destroyLike'])->name('like.destroy');
 });
 
 Route::middleware(['auth', 'admin'])->group(function () {
