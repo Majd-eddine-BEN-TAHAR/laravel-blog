@@ -19,6 +19,7 @@ This Laravel-based blog application offers a comprehensive platform for blogging
 - **Image Uploads**: Support for uploading and displaying featured images in blog posts.
 - **Add Comments** : Users can interact with the blog by adding comments to posts.
 - **Delete and Edit Comments** : Users have the ability to remove their own comments, giving them control over the content they contribute to the blog, they also can edit their comments after posting them.
+- **Like posts** : Users can like posts.
 - **About and Contact Pages**: Includes template pages for 'About Us' and 'Contact' with dummy content.
 
 ## Technologies Used
@@ -38,8 +39,8 @@ cd laravel-blog
 composer install
 cp .env.example .env
 php artisan key:generate
-# Create a database
-# Edit .env file with your database settings
+# Create a database and name it laravel_blog
+# Edit .env file with your database settings like the database user with his password
 php artisan storage:link
 mkdir -p public/storage/posts
 php artisan migrate
@@ -55,13 +56,13 @@ After running the database seeders, you will have two default user accounts:
 
   Email: admin@example.com
   
-  Password: majdmajd
+  Password: test1234
 
 - **Regular User Account :**
 
   Email: user@example.com
   
-  Password: majdmajd
+  Password: test1234
 
 ## License
 

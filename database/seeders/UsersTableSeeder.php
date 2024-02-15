@@ -16,13 +16,13 @@ class UsersTableSeeder extends Seeder
             [
                 'name' => 'Admin User',
                 'email' => 'admin@example.com',
-                'password' => Hash::make('majdmajd'),
+                'password' => Hash::make('test1234'),
                 'is_admin' => true,
             ],
             [
                 'name' => 'Regular User',
                 'email' => 'user@example.com',
-                'password' => Hash::make('majdmajd'),
+                'password' => Hash::make('test1234'),
                 'is_admin' => false,
             ],
         ];
