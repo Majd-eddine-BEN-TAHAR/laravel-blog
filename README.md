@@ -56,13 +56,13 @@ After running the database seeders, you will have two default user accounts:
 
   Email: admin@example.com
   
-  Password: majdmajd
+  Password: test1234
 
 - **Regular User Account :**
 
   Email: user@example.com
   
-  Password: majdmajd
+  Password: test1234
 
 ## License
 
