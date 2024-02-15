@@ -40,7 +40,7 @@ composer install
 cp .env.example .env
 php artisan key:generate
 # Create a database and name it laravel_blog
-# Edit .env file with your database settings
+# Edit .env file with your database settings like the database user with his password
 php artisan storage:link
 mkdir -p public/storage/posts
 php artisan migrate
