@@ -25,7 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $posts = Post::withCount(['comments', 'likes'])->where('status', 1)->latest()->paginate(4);
+        $posts = Post::withCount(['comments', 'likes'])->where('status', 1)->latest()->paginate(4); // Fetch 4 published posts per page
         $categories = Category::all();
         return view('home', compact('posts', 'categories'));
     }
