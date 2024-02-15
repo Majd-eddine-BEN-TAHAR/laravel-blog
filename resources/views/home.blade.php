@@ -22,19 +22,27 @@
                     <div class="col-lg-8">
                         {{-- <h2>Latest Posts</h2> --}}
                         @if ($posts->currentPage() == 1 && $posts->count() > 0)
-                            <!-- Featured blog post-->
+                            <!-- Featured blog post -->
                             @php $featuredPost = $posts->shift() @endphp
                             <div class="card mb-4">
-                                <a href="{{ route('post.show', $featuredPost->slug) }}"><img class="card-img-top"
-                                        src="{{ Storage::url($featuredPost->featured_image) }}"
+                                <a href="{{ route('post.show', $featuredPost->slug) }}">
+                                    <img class="card-img-top" src="{{ Storage::url($featuredPost->featured_image) }}"
                                         alt="{{ $featuredPost->title }}"
-                                        style="height: 350px; width:100%;max-width:850px;object-fit: cover;" /></a>
+                                        style="height: 350px; width:100%;max-width:850px;object-fit: cover;" />
+                                </a>
                                 <div class="card-body">
                                     <div class="small text-muted">{{ $featuredPost->published_at->format('M d, Y') }}</div>
                                     <h2 class="card-title">{{ $featuredPost->title }}</h2>
                                     <p class="card-text">{{ $featuredPost->excerpt }}</p>
-                                    <a class="btn btn-primary" href="{{ route('post.show', $featuredPost->slug) }}">Read
-                                        more →</a>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <span class="text-muted">Comments: {{ $featuredPost->comments_count }}</span>
+                                            <span class="mx-2">|</span>
+                                            <span class="text-muted">Likes: {{ $featuredPost->likes_count }}</span>
+                                        </div>
+                                        <a class="btn btn-primary" href="{{ route('post.show', $featuredPost->slug) }}">Read
+                                            more →</a>
+                                    </div>
                                 </div>
                             </div>
                         @endif
@@ -45,22 +53,32 @@
                                 <div class="col-lg-6 mb-2">
                                     <!-- Blog post-->
                                     <div class="card mb-4 h-100">
-                                        <a href="{{ route('post.show', $post->slug) }}"><img class="card-img-top"
-                                                src="{{ Storage::url($post->featured_image) }}" alt="{{ $post->title }}"
-                                                style="height: 200px; width:100%;max-width:700px;object-fit: cover;" /></a>
+                                        <a href="{{ route('post.show', $post->slug) }}">
+                                            <img class="card-img-top" src="{{ Storage::url($post->featured_image) }}"
+                                                alt="{{ $post->title }}"
+                                                style="height: 200px; width:100%;max-width:700px;object-fit: cover;" />
+                                        </a>
                                         <div class="card-body">
                                             <div class="small text-muted">{{ $post->published_at->format('M d, Y') }}</div>
-                                            <h2 class="card-title h4 ">{{ $post->title }}</h2>
+                                            <h2 class="card-title h4 "
+                                                style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                                                {{ $post->title }}
+                                            </h2>
                                             <p class="card-text">{{ $post->excerpt }}</p>
-                                            {{-- <a class="btn btn-primary" href="#!">Read more →</a> --}}
-                                            <a class="btn btn-primary" href="{{ route('post.show', $post->slug) }}">Read
-                                                more →</a>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <span class="text-muted">Comments: {{ $post->comments_count }}</span>
+                                                    <span class="mx-2">|</span>
+                                                    <span class="text-muted">Likes: {{ $post->likes_count }}</span>
+                                                </div>
+                                                <a class="btn btn-primary"
+                                                    href="{{ route('post.show', $post->slug) }}">Read more →</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             @endforeach
                         </div>
-
                         <!-- Pagination-->
                         @if ($posts->hasPages())
                             <nav aria-label="Pagination">
