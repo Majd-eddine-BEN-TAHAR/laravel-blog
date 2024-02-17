@@ -12,7 +12,7 @@ This Laravel-based blog application offers a comprehensive platform for blogging
 - **Category Management**: Allows for the creation, editing, and deletion of post categories.
 - **User Management**: Admins can manage user accounts, including editing user information and deleting users.
 - **Change Password Functionality**: Users can securely change their passwords.
-- **Search Functionality**: Users can search for blog posts based on content.
+- **Search Functionality**: Users can search for blog posts based on content or categories.
 - **Responsive Design**: Styled with Bootstrap 5 for a modern, responsive user interface.
 - **Settings Page**: Admins can update site settings, including site title and favicon.
 - **Pagination**: Implemented pagination for blog posts and categories.
