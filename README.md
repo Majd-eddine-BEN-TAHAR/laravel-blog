@@ -6,7 +6,7 @@ This Laravel-based blog application offers a comprehensive platform for blogging
 ## Features
 
 - **User Authentication**: Utilizes Laravel's authentication system for secure user registration and login.
-- **Profile Management**: Users can view and edit their profile information, including name and email.
+- **Profile Management**: Users can view and edit their profile information, including name,email and avatar.
 - **Admin Dashboard**: A dedicated admin panel for managing blog posts, categories, and user accounts.
 - **Post Creation and Management**: Admins can create, edit, and delete blog posts, with markdown support for content creation.
 - **Category Management**: Allows for the creation, editing, and deletion of post categories.
