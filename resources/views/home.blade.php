@@ -64,7 +64,10 @@
                                                 style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
                                                 {{ $post->title }}
                                             </h2>
-                                            <p class="card-text">{{ $post->excerpt }}</p>
+                                            <p class="card-text"
+                                                style="height: 4.5em; overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 3; -webkit-box-orient: vertical;">
+                                                {{ $post->excerpt }}
+                                            </p>
                                             <div class="d-flex justify-content-between align-items-center">
                                                 <div>
                                                     <span class="text-muted">Comments: {{ $post->comments_count }}</span>
