@@ -17,12 +17,19 @@ class ProfileController extends Controller
         $request->validate([
             'name' => 'required|max:255',
             'email' => 'required|email|max:255',
+            'avatar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         $user = Auth::user();
         $user->name = $request->name;
         $user->email = $request->email;
-        // Add any other fields you want to update
+
+
+        if ($request->hasFile('avatar')) {
+            $avatarName = $user->id . '_avatar' . time() . '.' . request()->avatar->getClientOriginalExtension();
+            $request->avatar->storeAs('public/avatars', $avatarName);
+            $user->avatar = $avatarName;
+        }
 
         $user->save();
 

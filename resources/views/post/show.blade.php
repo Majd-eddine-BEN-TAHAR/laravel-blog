@@ -54,9 +54,24 @@
                         @forelse ($post->comments as $comment)
                             <div class="border-bottom mb-3 pb-3">
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <strong>{{ $comment->user->name }}</strong>
-                                        <span class="text-muted">{{ $comment->created_at->diffForHumans() }}</span>
+                                    <div class="d-flex align-items-center">
+                                        <!-- Avatar Display -->
+                                        <div class="me-2">
+                                            @if ($comment->user->avatar)
+                                                <img src="{{ asset('storage/avatars/' . $comment->user->avatar) }}"
+                                                    alt="Avatar" class="rounded-circle"
+                                                    style="width: 40px; height: 40px;">
+                                            @else
+                                                <div class="default-avatar bg-primary text-white rounded-circle"
+                                                    style="width: 40px; height: 40px; line-height: 40px; text-align: center; font-size: 20px;">
+                                                    {{ strtoupper($comment->user->name[0]) }}
+                                                </div>
+                                            @endif
+                                        </div>
+                                        <div>
+                                            <strong>{{ $comment->user->name }}</strong>
+                                            <span class="text-muted">{{ $comment->created_at->diffForHumans() }}</span>
+                                        </div>
                                     </div>
                                     @if (auth()->check() && auth()->id() === $comment->user_id)
                                         <div class="btn-group">
